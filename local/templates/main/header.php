@@ -50,7 +50,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	<div id="panel">
 		<? $APPLICATION->ShowPanel(); ?>
 	</div>
-	<div <?= $APPLICATION->GetCurpage() !== "/" ? 'class="header-top-area bg-color ptb-10 hidden-xs"' : 'style= "display: none"' ?>>
+	<div <?= $APPLICATION->GetCurpage() === "/" ? 'style= "display: none"' : 'class="header-top-area bg-color ptb-10 hidden-xs"' ?>>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
@@ -111,28 +111,29 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 								),
 								false
 							); ?>
-						</div>
-						<!-- Поиск -->
-						<div class="header-right">
-							<div class="header-search">
-								<div class="search-wrapper">
-									<a href="javascript:void(0);" class="search-open">
-										<i class="pe-7s-search"></i>
-									</a>
-									<div class="search-inside animated bounceInUp">
-										<i class="icon-close search-close fa fa-times"></i>
-										<div class="search-overlay"></div>
-										<div class="position-center-center">
-											<div class="search">
-												<form>
-													<input type="search" placeholder="Поиск по сайту">
-													<button type="submit"><i class="fa fa-search"></i></button>
-												</form>
+							<!-- Поиск -->
+							<div class="header-right">
+								<div class="header-search">
+									<div class="search-wrapper">
+										<a href="javascript:void(0);" class="search-open">
+											<i class="pe-7s-search"></i>
+										</a>
+										<div class="search-inside animated bounceInUp">
+											<i class="icon-close search-close fa fa-times"></i>
+											<div class="search-overlay"></div>
+											<div class="position-center-center">
+												<div class="search">
+													<form>
+														<input type="search" placeholder="Поиск по сайту">
+														<button type="submit"><i class="fa fa-search"></i></button>
+													</form>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
