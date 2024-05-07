@@ -50,7 +50,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	<div id="panel">
 		<? $APPLICATION->ShowPanel(); ?>
 	</div>
-	<div class="header-top-area bg-color ptb-10 hidden-xs">
+	<div  <?= $APPLICATION->GetCurpage() !== "/" ? 'class="header-top-area bg-color ptb-10 hidden-xs"' : 'style= "display: none"' ?>>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
