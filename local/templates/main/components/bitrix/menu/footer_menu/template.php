@@ -1,16 +1,17 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
 <? if (!empty($arResult)) : ?>
-	<div class="col-md-10 col-sm-9 col-xs-4 text-right dark-menu">
-		<div class="header-main-menu hidden-xs">
-			<nav id="primary-menu">
-				<ul class="main-menu text-right">
+	<div class="col-lg-7 col-md-7 col-sm-12">
+		<div class="footer-nav white-text">
+			<nav>
+				<ul>
 					<? foreach ($arResult as $arItem) : ?>
-						<li <?= $arItem==$arResult[0] ? 'class="mega-parent"' : '' ?> >
+						<li <?= $arItem == $arResult[0] ? 'class="mega-parent"' : '' ?>>
 							<a href="<?= $arItem["LINK"] ?>"> <?= $arItem["TEXT"] ?></a>
 						</li>
 					<? endforeach ?>
 				</ul>
 			</nav>
 		</div>
-	<? endif ?>
+	</div>
+<? endif ?>
