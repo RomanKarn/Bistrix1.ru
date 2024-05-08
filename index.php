@@ -3,7 +3,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetTitle('Главная');
 $APPLICATION->SetPageProperty('TITLE', "Главная");
 ?>
-//Слайдер
+<!-- Слайдер -->
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"slider_main_page",
@@ -71,7 +71,7 @@ $APPLICATION->SetPageProperty('TITLE', "Главная");
 	),
 	false
 ); ?>
-// О нас
+<!-- О нас -->
 <section class="who-area-are pad-90" id="about_us">
 	<div class="container">
 		<h2 class="title-1">
