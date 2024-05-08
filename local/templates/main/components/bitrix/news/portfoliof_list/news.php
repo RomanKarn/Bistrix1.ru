@@ -38,8 +38,8 @@ $this->setFrameMode(true);
 					"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",	// Показывать количество
 					"FILTER_NAME" => "sectionsFilter",	// Имя массива со значениями фильтра разделов
 					"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",	// Скрывать разделы с нулевым количеством элементов
-					"IBLOCK_ID" => "4",	// Инфоблок
-					"IBLOCK_TYPE" => "content",	// Тип инфоблока
+					"IBLOCK_ID" =>  $arParams["IBLOCK_ID"],	// Инфоблок
+					"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],	// Тип инфоблока
 					"SECTION_CODE" => "",	// Код раздела
 					"SECTION_FIELDS" => array(	// Поля разделов
 						0 => "CODE",
