@@ -192,7 +192,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 							<h2 class="white-text"><?php $APPLICATION->ShowTitle(false); ?></h2>
 						</div>
 					</div>
-					<<? $APPLICATION->IncludeComponent(
+					<? $APPLICATION->IncludeComponent(
 							"bitrix:breadcrumb",
 							"nav_chain",
 							array(
