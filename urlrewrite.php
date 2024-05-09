@@ -1,5 +1,21 @@
 <?php
 $arUrlRewrite=array (
+  3 => 
+  array (
+    'CONDITION' => '#^/servises/primeri_rabot/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/servises/index.php',
+    'SORT' => 100,
+  ),
+  4 => 
+  array (
+    'CONDITION' => '#^/servises/primery-rabot/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/servises/primery-rabot.php',
+    'SORT' => 100,
+  ),
   1 => 
   array (
     'CONDITION' => '#^/portfolios/#',
