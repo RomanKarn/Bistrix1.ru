@@ -193,7 +193,7 @@ $APPLICATION->SetTitle("ЧЕМ МЫ ЗАНИМАЕМСЯ");
  <?
  $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
-	"",
+	"servisis_premer_rabot_list",
 	[
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => "8",
@@ -201,7 +201,7 @@ $APPLICATION->SetTitle("ЧЕМ МЫ ЗАНИМАЕМСЯ");
 		"SORT_BY1" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"FIELD_CODE" => array("CODE","NAME","PREVIEW_TEXT","DETAIL_TEXT",""),
-		"PROPERTY_CODE" => array("BUTTON_MORE","CHARACTERISTICS_SITE",""),
+		"PROPERTY_CODE" => array("BUTTON_MORE","CHARACTERISTICS_SITE","COLOR",""),
 		"DETAIL_URL" => "/servises/primery-rabot/#ELEMENT_CODE#/",
 		"SECTION_URL" => "",
 		"IBLOCK_URL" => "",
