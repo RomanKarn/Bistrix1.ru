@@ -12,11 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?
-echo "<pre>";
-print_r($arResult);
-echo "<pre>";
-?>
 <? if(!empty($arResult)):?>
 <section class="who-area-are pad-90" id="about_us">
     <div class="container">
@@ -43,49 +38,22 @@ echo "<pre>";
                 <h3 class="mb-30">Вопросы и ответы</h3>
                 <div class="brand-accordion">
                     <div class="panel-group icon angle-icon" id="accordion" role="tablist" aria-multiselectable="true">
+						<? foreach($arResult["PROPERTIES"]["QUESTIONS_ANSWERS"]["VALUE"] as $key => $arAnsver):?>
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
+                            <div class="panel-heading" role="tab" id='<?="heading" . $key?>'>
                                 <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Что я получу в итоге?
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href='<?="#collapse" . $key?>' aria-expanded="true" aria-controls='<?="collapse" . $key?>'>
+                                        <?= $arAnsver ?? ""?>
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div id='<?="collapse" . $key?>' class="panel-collapse collapse" role="tabpanel" aria-labelledby='<?="heading" . $key?>'>
                                 <div class="panel-body">
-                                    На выходе вы получите саму страницу размещенную на хостинге с настроенным доменом.<br>
-                                    Также вам будут высланы все макеты страницы, которые были сделаны во время работы
+                                    <?= $arResult["PROPERTIES"]["QUESTIONS_ANSWERS"]["~DESCRIPTION"][$key] ?? "" ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Какие сроки?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    Обычно сроки создания лендинга от 7 до 14 дней
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Будет ли панель управления у страницы?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    По умолчанию нет, но если в ней есть необходимость, то сделаем.
-                                </div>
-                            </div>
-                        </div>
+						<?endforeach?>
                     </div>
                 </div>
             </div>
@@ -94,26 +62,18 @@ echo "<pre>";
                 <div class="my-tab">
                     <!-- Nav tabs -->
                     <ul class="custom-tab mb-15" role="tablist">
-                        <li role="presentation" class="active"><a href="#analytyc" aria-controls="analytyc" role="tab" data-toggle="tab">Аналитика</a></li>
-                        <li role="presentation"><a href="#design" aria-controls="design" role="tab" data-toggle="tab">Дизайн</a></li>
-                        <li role="presentation"><a href="#progging" aria-controls="progging" role="tab" data-toggle="tab">Программирование</a></li>
-                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Настройка</a></li>
+						<? foreach($arResult["PROPERTIES"]["STAGES_DEVELOPMENT"]["VALUE"] as $key => $value):?>
+                        <li role="presentation"><a href='<?= "#kod" . $key?>' aria-controls='<?= "kod" . $key?>' role="tab" data-toggle="tab"><?= $value ?? ""?></a></li>
+						<?endforeach?>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active" id="analytyc">
-                            <p>Перед началом работ будет проведен этап аналитики, в котором будут определены ваши предпочтения по дизайну, функционалу и контенту.</p>
+						<? foreach($arResult["PROPERTIES"]["STAGES_DEVELOPMENT"]["DESCRIPTION"] as $key => $value):?>
+                        <div role="tabpanel" class="tab-pane fade" id='<?= "kod" . $key?>'>
+                            <p><?= $value ?? ""?></p>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="design">
-                            <p>Следующим этапом будет отрисовка дизайна лендинга, а затем внесение правок. </p>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="progging">
-                            <p>После отрисовки макетов будет произведена верстка и программирование, а также тестирование работоспособности.</p>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="settings">
-                            <p>На последнем этапе сайт будет загружен на хостинг, будет настроен домен и произведены все необходимые настройки хотинга.</p>
-                        </div>
+						<?endforeach?>
                     </div>
                 </div>
             </div>
