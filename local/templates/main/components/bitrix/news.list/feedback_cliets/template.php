@@ -19,7 +19,11 @@ $this->setFrameMode(true);
 				<div class="col-md-8 col-md-offset-2">
 					<div class="testimonial-active dots-style">
 						<? foreach ($arResult["ITEMS"] as $arItem) : ?>
-							<div class="single-testimonial black-text text-center">
+							<?
+							$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+							$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+							?>
+							<div class="single-testimonial black-text text-center" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 								<div class="testimonial-title">
 									<span class="icon-quote"></span>
 									<h3 class="black-text"><?= isset($arItem["NAME"]) ? $arItem["NAME"] : "" ?></h3>
