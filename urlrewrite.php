@@ -1,6 +1,6 @@
 <?php
 $arUrlRewrite=array (
-  2 => 
+  1 => 
   array (
     'CONDITION' => '#^/portfolios/#',
     'RULE' => '',

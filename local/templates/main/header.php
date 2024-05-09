@@ -181,4 +181,25 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				</div>
 			</div>
 		</div>
+
+		<!--Крошки хлеба -->
+		<div class="breadcrumb-area brand-bg ptb-100">
+			<div class="container width-100">
+				<div class="row z-index">
+					<div class="col-md-7 col-sm-6">
+						<div class="breadcrumb-title">
+							<h2 class="white-text"><?php $APPLICATION->ShowTitle(false); ?></h2>
+						</div>
+					</div>
+					<<? $APPLICATION->IncludeComponent(
+							"bitrix:breadcrumb",
+							"nav_chain",
+							array(
+								"PATH" => "",
+								"SITE_ID" => "s1",
+								"START_FROM" => "0"
+							)
+						); ?> </div>
+				</div>
+			</div>
 	</header>

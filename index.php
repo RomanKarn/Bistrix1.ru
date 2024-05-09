@@ -320,12 +320,11 @@ $APPLICATION->SetPageProperty('TITLE', "Главная");
 					"DETAIL_URL" => "/portfolios/#SECTION_CODE#/#ELEMENT_CODE#/",
 					"SECTION_URL" => "",
 					"IBLOCK_URL" => "",
-					"SET_TITLE" => "Y",
-                    "SET_TITLE"                       => 'Y',
+					"SET_TITLE" => "N",
                     "SET_LAST_MODIFIED"               => 'Y',
                     "SET_STATUS_404"                  => 'Y',
                     "SHOW_404"                        => 'N',
-                    "INCLUDE_IBLOCK_INTO_CHAIN"       => 'Y',
+                    "INCLUDE_IBLOCK_INTO_CHAIN"       => 'N',
                     "CACHE_FILTER"                    => "N",    // Кешировать при установленном фильтре
                     "CACHE_GROUPS"                    => "N",    // Учитывать права доступа
                     "CACHE_TIME"                      => "36000000",    // Время кеширования (сек.)
