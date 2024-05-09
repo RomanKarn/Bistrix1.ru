@@ -261,7 +261,87 @@ $APPLICATION->SetPageProperty('TITLE', "Главная");
 	),
 	false
 );?>
+<!-- Портфолио -->
+<section class="work-area pt-90 pb-60" id="portfolio">
+	<div class="container">
+		<div class="row">
+			<div class="section-heading text-center mb-70">
+				<h2>Портфолио</h2>
+				<p>Лучший способ найти хорошую команду - это посмотреть результаты её работы</p>
+			</div>
+		</div>
+		<div class="row">
+		<? $APPLICATION->IncludeComponent(
+				"bitrix:catalog.section.list",
+				"portfolio_section_list",
+				array(
+					"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",	// Дополнительный фильтр для подсчета количества элементов в разделе
+					"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+					"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+					"CACHE_GROUPS" => "N",	// Учитывать права доступа
+					"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+					"CACHE_TYPE" => "N",	// Тип кеширования
+					"COUNT_ELEMENTS" => "N",	// Показывать количество элементов в разделе
+					"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",	// Показывать количество
+					"FILTER_NAME" => "sectionsFilter",	// Имя массива со значениями фильтра разделов
+					"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",	// Скрывать разделы с нулевым количеством элементов
+					"IBLOCK_ID" =>  "4",	// Инфоблок
+					"IBLOCK_TYPE" =>  'content',	// Тип инфоблока
+					"SECTION_CODE" => "",	// Код раздела
+					"SECTION_FIELDS" => array(	// Поля разделов
+						0 => "CODE",
+						1 => "NAME",
+						2 => "",
+					),
+					"SECTION_ID" => "",	// ID раздела
+					"SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
+					"SECTION_USER_FIELDS" => array(	// Свойства разделов
+						0 => "",
+						1 => "",
+					),
+					"SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
+					"TOP_DEPTH" => "1",	// Максимальная отображаемая глубина разделов
+					"VIEW_MODE" => "LINE",	// Вид списка подразделов
+				),
+				false
+			); ?>
+			
+			<? $APPLICATION->IncludeComponent(
+				"bitrix:news.list",
+				"portfolio_elements_list",
+				[
+					"IBLOCK_TYPE" =>  'content',
+					"IBLOCK_ID" => "4",
+					"NEWS_COUNT" => 6,
+					"SORT_BY1" => "SORT",
+					"SORT_ORDER1" => "ASC",
+					"FIELD_CODE" =>  ["CODE", "NAME", "PREVIEW_PICTURE",],
+					"PROPERTY_CODE" => [],
+					"DETAIL_URL" => "/portfolios/#SECTION_CODE#/#ELEMENT_CODE#/",
+					"SECTION_URL" => "",
+					"IBLOCK_URL" => "",
+					"SET_TITLE" => "Y",
+                    "SET_TITLE"                       => 'Y',
+                    "SET_LAST_MODIFIED"               => 'Y',
+                    "SET_STATUS_404"                  => 'Y',
+                    "SHOW_404"                        => 'N',
+                    "INCLUDE_IBLOCK_INTO_CHAIN"       => 'Y',
+                    "CACHE_FILTER"                    => "N",    // Кешировать при установленном фильтре
+                    "CACHE_GROUPS"                    => "N",    // Учитывать права доступа
+                    "CACHE_TIME"                      => "36000000",    // Время кеширования (сек.)
+                    "CACHE_TYPE"                      => "A",    // Тип кеширования
+                    "DISPLAY_TOP_PAGER"               => 'N',
+                    "DISPLAY_BOTTOM_PAGER"            => 'N',
+                    "DISPLAY_DATE"                    => 'N',
+                    "DISPLAY_NAME"                    => "Y",
+                    "CHECK_DATES"                     => 'Y',
+				],
+				false
+			); ?>
+		</div>
 
+	</div>
+</section>
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
 ?>

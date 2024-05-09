@@ -1,9 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Портфолио ");
-?>
-
-<?$APPLICATION->IncludeComponent("bitrix:news", "portfoliof_list", Array(
+?><?$APPLICATION->IncludeComponent("bitrix:news", "portfolio_prodgects", Array(
 	"ADD_ELEMENT_CHAIN" => "Y",	// Включать название элемента в цепочку навигации
 		"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
 		"AJAX_MODE" => "N",	// Включить режим AJAX
@@ -21,8 +19,9 @@ $APPLICATION->SetTitle("Портфолио ");
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",	// Выводить под списком
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
 		"DETAIL_FIELD_CODE" => array(	// Поля
-			0 => "NAME",
-			1 => "",
+			0 => "CODE",
+			1 => "NAME",
+			2 => "",
 		),
 		"DETAIL_PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
 		"DETAIL_PAGER_TEMPLATE" => "",	// Название шаблона
@@ -33,6 +32,7 @@ $APPLICATION->SetTitle("Портфолио ");
 			2 => "DETALEDS_DESCRIPTIONS",
 			3 => "LINK",
 			4 => "GALERI",
+			5 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",	// Устанавливать канонический URL
 		"DISPLAY_BOTTOM_PAGER" => "N",	// Выводить под списком
@@ -49,9 +49,8 @@ $APPLICATION->SetTitle("Портфолио ");
 		"LIST_FIELD_CODE" => array(	// Поля
 			0 => "CODE",
 			1 => "NAME",
-			2 => "PREVIEW_TEXT",
-			3 => "PREVIEW_PICTURE",
-			4 => "",
+			2 => "PREVIEW_PICTURE",
+			3 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(	// Свойства
 			0 => "",
@@ -69,7 +68,7 @@ $APPLICATION->SetTitle("Портфолио ");
 		"PAGER_TEMPLATE" => ".default",	// Шаблон постраничной навигации
 		"PAGER_TITLE" => "Новости",	// Название категорий
 		"PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
-		"SEF_FOLDER" => "/portfolio/",	// Каталог ЧПУ (относительно корня сайта)
+		"SEF_FOLDER" => "/portfolios/",	// Каталог ЧПУ (относительно корня сайта)
 		"SEF_MODE" => "Y",	// Включить поддержку ЧПУ
 		"SEF_URL_TEMPLATES" => array(
 			"detail" => "#SECTION_CODE#/#ELEMENT_CODE#/",
@@ -78,7 +77,7 @@ $APPLICATION->SetTitle("Портфолио ");
 		),
 		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
 		"SET_STATUS_404" => "Y",	// Устанавливать статус 404
-		"SET_TITLE" => "Y",	// Устанавливать заголовок страницы
+		"SET_TITLE" => "N",	// Устанавливать заголовок страницы
 		"SHOW_404" => "N",	// Показ специальной страницы
 		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
 		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
@@ -94,6 +93,4 @@ $APPLICATION->SetTitle("Портфолио ");
 		"USE_SHARE" => "N",	// Отображать панель соц. закладок
 	),
 	false
-);?>
-
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
