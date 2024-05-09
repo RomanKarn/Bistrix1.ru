@@ -181,7 +181,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				</div>
 			</div>
 		</div>
-
+	</header>
+	<?php if ($APPLICATION->GetCurDir() !== '/') : ?>
 		<!--Крошки хлеба -->
 		<div class="breadcrumb-area brand-bg ptb-100">
 			<div class="container width-100">
@@ -202,4 +203,4 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 						); ?> </div>
 				</div>
 			</div>
-	</header>
+		<?php endif; ?>

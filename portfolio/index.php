@@ -1,8 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Портфолио ");
-?>
-<?$APPLICATION->IncludeComponent(
+?><?$APPLICATION->IncludeComponent(
 	"bitrix:news",
 	"portfolio_prodgects",
 	Array(
@@ -58,7 +57,7 @@ $APPLICATION->SetTitle("Портфолио ");
 		"SEF_URL_TEMPLATES" => Array("detail"=>"#SECTION_CODE#/#ELEMENT_CODE#/","news"=>"","section"=>""),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "Y",
-		"SET_TITLE" => "N",
+		"SET_TITLE" => "Y",
 		"SHOW_404" => "N",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
