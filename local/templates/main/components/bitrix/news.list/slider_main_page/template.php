@@ -28,7 +28,7 @@ $this->setFrameMode(true);
 						<span><?= $arItem["NAME"] ?></span>
 						<h2><?= $arItem["PREVIEW_TEXT"] ?></h2>
 						<? if (!empty($arItem["DETAIL_TEXT"])) : ?>
-							<a class="my-button" href='<?= !empty($arItem["PROPERTIES"][0]) ? $arItem["PROPERTIES"][0]["VALUE"] : "" ?>'> <?= $arItem["DETAIL_TEXT"] ?></a>
+							<a class="my-button" href='<?= !empty($arItem["PROPERTIES"][1]) ? $arItem["PROPERTIES"][1]["VALUE"] : "" ?>'> <?= $arItem["DETAIL_TEXT"] ?></a>
 						<? endif ?>
 					</div>
 				</div>
