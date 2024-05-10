@@ -29,11 +29,18 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"Контакты", 
+		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
 		"test", 
 		"/test.php", 
 		Array(), 
 		Array(), 
 		"" 
-	),
+	)
 );
 ?>
