@@ -97,9 +97,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 								"top_menu",
 								array(
 									"ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
-									"CHILD_MENU_TYPE" => "left",    // Тип меню для остальных уровней
+									"CHILD_MENU_TYPE" => "submenu",    // Тип меню для остальных уровней
 									"DELAY" => "N",    // Откладывать выполнение шаблона меню
-									"MAX_LEVEL" => "1",    // Уровень вложенности меню
+									"MAX_LEVEL" => "2",    // Уровень вложенности меню
 									"MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
 										0 => "",
 									),
