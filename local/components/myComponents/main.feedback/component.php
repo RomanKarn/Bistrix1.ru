@@ -35,6 +35,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] <> '' && (!isset($_P
 				$arResult["ERROR_MESSAGE"][] = GetMessage("MF_REQ_NAME");
 			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("EMAIL", $arParams["REQUIRED_FIELDS"])) && mb_strlen($_POST["user_email"]) <= 1)
 				$arResult["ERROR_MESSAGE"][] = GetMessage("MF_REQ_EMAIL");
+			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("PHONE", $arParams["REQUIRED_FIELDS"])) && empty($_POST["user_phone"]))
+				$arResult["ERROR_MESSAGE"][] = GetMessage("MF_REQ_PHONE");
 			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("MESSAGE", $arParams["REQUIRED_FIELDS"])) && mb_strlen($_POST["MESSAGE"]) <= 3)
 				$arResult["ERROR_MESSAGE"][] = GetMessage("MF_REQ_MESSAGE");
 		}
@@ -60,6 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] <> '' && (!isset($_P
 			$arFields = Array(
 				"AUTHOR" => $_POST["user_name"],
 				"AUTHOR_EMAIL" => $_POST["user_email"],
+				"PHONE" => $_POST["user_phone"],
 				"EMAIL_TO" => $arParams["EMAIL_TO"],
 				"TEXT" => $_POST["MESSAGE"],
 			);
@@ -73,6 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] <> '' && (!isset($_P
 				CEvent::Send($arParams["EVENT_NAME"], SITE_ID, $arFields);
 			$_SESSION["MF_NAME"] = htmlspecialcharsbx($_POST["user_name"]);
 			$_SESSION["MF_EMAIL"] = htmlspecialcharsbx($_POST["user_email"]);
+			$_SESSION["MF_PHONE"] = htmlspecialcharsbx($_POST["user_phone"]);
 			$event = new \Bitrix\Main\Event('main', 'onFeedbackFormSubmit', $arFields);
 			$event->send();
 			LocalRedirect($APPLICATION->GetCurPageParam("success=".$arResult["PARAMS_HASH"], Array("success")));
@@ -81,6 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] <> '' && (!isset($_P
 		$arResult["MESSAGE"] = htmlspecialcharsbx($_POST["MESSAGE"]);
 		$arResult["AUTHOR_NAME"] = htmlspecialcharsbx($_POST["user_name"]);
 		$arResult["AUTHOR_EMAIL"] = htmlspecialcharsbx($_POST["user_email"]);
+		$arResult["AUTHOR_PHONE"] = htmlspecialcharsbx($_POST["user_phone"]);
 	}
 	else
 		$arResult["ERROR_MESSAGE"][] = GetMessage("MF_SESS_EXP");
@@ -103,6 +108,8 @@ if(empty($arResult["ERROR_MESSAGE"]))
 			$arResult["AUTHOR_NAME"] = htmlspecialcharsbx($_SESSION["MF_NAME"]);
 		if($_SESSION["MF_EMAIL"] <> '')
 			$arResult["AUTHOR_EMAIL"] = htmlspecialcharsbx($_SESSION["MF_EMAIL"]);
+		if($_SESSION["MF_PHONE"] <> '')
+			$arResult["AUTHOR_PHONE"] = htmlspecialcharsbx($_SESSION["MF_PHONE"]);
 	}
 }
 
