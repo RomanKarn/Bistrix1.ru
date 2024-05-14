@@ -111,29 +111,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 								),
 								false
 							); ?>
-							<!-- Поиск -->
-							<div class="header-right">
-								<div class="header-search">
-									<div class="search-wrapper">
-										<a href="javascript:void(0);" class="search-open">
-											<i class="pe-7s-search"></i>
-										</a>
-										<div class="search-inside animated bounceInUp">
-											<i class="icon-close search-close fa fa-times"></i>
-											<div class="search-overlay"></div>
-											<div class="position-center-center">
-												<div class="search">
-													<form>
-														<input type="search" placeholder="Поиск по сайту">
-														<button type="submit"><i class="fa fa-search"></i></button>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
 						</div>
 					</div>
 				</div>
